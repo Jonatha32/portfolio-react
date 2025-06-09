@@ -269,8 +269,8 @@ const About = () => {
               >
                 <AboutImage>
                   <img 
-                    src={process.env.PUBLIC_URL + "image3.jpg"} 
-                    alt="Foto de perfil" 
+                    src="https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/image3.jpg" 
+                    alt="Profile photo" 
                   />
                 </AboutImage>
               </motion.div>
@@ -316,7 +316,7 @@ const About = () => {
                       </StoryText>
                     </StoryItem>
                   </AboutStorySection>
-                  <ResumeButton href={process.env.PUBLIC_URL + "/JonathanPerezCV.pdf"} download>
+                  <ResumeButton href="https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/JonathanPerezCV.pdf" download>
                     <FaDownload /> Download CV
                   </ResumeButton>
                 </AboutText>

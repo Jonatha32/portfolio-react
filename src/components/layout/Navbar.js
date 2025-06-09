@@ -172,7 +172,9 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <img 
-            src={process.env.PUBLIC_URL + (isDarkMode ? '/logo4-Photoroom.png' : '/Logoprofesional.png')} 
+            src={isDarkMode 
+              ? "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/logo4-Photoroom.png" 
+              : "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/Logoprofesional.png"} 
             alt="Logo" 
           />
         </motion.div>
