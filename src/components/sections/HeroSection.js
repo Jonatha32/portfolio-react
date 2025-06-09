@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaArrowDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../App';
 
 const HeroContainer = styled.section`
   height: 100vh;
@@ -150,6 +151,8 @@ const BackgroundShape = styled.div`
 `;
 
 const HeroSection = () => {
+  const { translations } = useContext(LanguageContext);
+  
   const scrollToNextSection = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -168,7 +171,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Greeting>Hello! My name is</Greeting>
+            <Greeting>{translations.greeting}</Greeting>
           </motion.div>
           
           <motion.div
@@ -176,7 +179,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Name>Jonathan</Name>
+            <Name>{translations.name}</Name>
           </motion.div>
           
           <motion.div
@@ -184,7 +187,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Title>Software Developer & Singer</Title>
+            <Title>{translations.title}</Title>
           </motion.div>
           
           <motion.div
@@ -193,7 +196,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Description>
-              From Uruguay, I combine art with technology to create things that connect, excite, and make an impact. I am a software development student at Holberton School, a music lover, and self-taught in everything I am passionate about.
+              {translations.description}
             </Description>
           </motion.div>
           
@@ -204,10 +207,10 @@ const HeroSection = () => {
           >
             <ButtonContainer>
               <Link to="/projects" className="btn">
-                View projects
+                {translations.viewProjects}
               </Link>
               <Link to="/contact" className="btn btn-outline">
-                Contact
+                {translations.contactMe}
               </Link>
             </ButtonContainer>
           </motion.div>
@@ -215,7 +218,7 @@ const HeroSection = () => {
       </HeroContent>
       
       <ScrollIndicator onClick={scrollToNextSection}>
-        <p>Move</p>
+        <p>{translations.scroll}</p>
         <FaArrowDown className="icon" />
       </ScrollIndicator>
     </HeroContainer>

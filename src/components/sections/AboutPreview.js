@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../App';
 
 const AboutContainer = styled.section`
   padding: 100px 0;
@@ -97,6 +98,8 @@ const AboutText = styled.div`
 `;
 
 const AboutPreview = () => {
+  const { translations } = useContext(LanguageContext);
+  
   return (
     <AboutContainer>
       <AboutContent>
@@ -121,19 +124,18 @@ const AboutPreview = () => {
           transition={{ duration: 0.5 }}
         >
           <AboutText>
-            <h2>About Me</h2>
+            <h2>{translations.aboutMe}</h2>
             <p>
-              Hello! My name is Jonathan Pérez, but many people know me as Jona.
-              I am a Uruguayan singer-songwriter with a strong passion for art, music, and creativity. Currently, I am also training as a Full Stack developer at Holberton School and studying Business Administration at the Faculty of Economic Sciences (UDELAR).
+              {translations.aboutText1}
             </p>
             <p>
-              From a very young age, I discovered that my life is deeply connected to expression: through a melody, an idea, or a creative solution to a problem. I believe that art and technology can go hand in hand to transform the world.
+              {translations.aboutText2}
             </p>
             <p>
-              I am passionate about learning, creating, and communicating. I sing every day, I program with enthusiasm, and I am always thinking about the next project that will challenge me.
+              {translations.aboutText3}
             </p>
             <Link to="/about" className="read-more">
-              Learn more about me <FaArrowRight />
+              {translations.learnMore} <FaArrowRight />
             </Link>
           </AboutText>
         </motion.div>

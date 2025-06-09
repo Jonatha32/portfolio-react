@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
+import { LanguageContext } from '../../App';
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -120,6 +121,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
+  const { translations } = useContext(LanguageContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -187,27 +189,27 @@ const Navbar = () => {
       <NavMenu isOpen={isOpen}>
         <NavItem>
           <NavLink to="/" className={location.pathname === '/' ? 'active' : ''}>
-            Home
+            {translations.home}
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink to="/about" className={location.pathname === '/about' ? 'active' : ''}>
-            About Me
+            {translations.about}
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink to="/skills" className={location.pathname === '/skills' ? 'active' : ''}>
-            Skills
+            {translations.skills}
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
-            Projects
+            {translations.projects}
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
-            Contact
+            {translations.contact}
           </NavLink>
         </NavItem>
       </NavMenu>

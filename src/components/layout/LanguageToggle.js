@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaLanguage } from 'react-icons/fa';
 import { LanguageContext } from '../../App';
 
 const ToggleContainer = styled.div`
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 80px; // Positioned to the left of the ThemeToggle
   z-index: 1000;
 `;
 
 const ToggleButton = styled.button`
-  background-color: ${({ darkMode }) => (darkMode ? '#bb86fc' : '#6c63ff')};
+  background-color: ${({ language }) => (language === 'en' ? '#6c63ff' : '#ff6b6b')};
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -32,7 +32,12 @@ const ToggleButton = styled.button`
   }
 `;
 
-const ThemeToggle = ({ darkMode, toggleDarkMode }) => {
+const LanguageText = styled.span`
+  font-weight: bold;
+  font-size: 0.9rem;
+`;
+
+const LanguageToggle = ({ language, toggleLanguage }) => {
   const { translations } = useContext(LanguageContext);
   
   return (
@@ -43,15 +48,15 @@ const ThemeToggle = ({ darkMode, toggleDarkMode }) => {
         transition={{ duration: 0.5 }}
       >
         <ToggleButton 
-          onClick={toggleDarkMode} 
-          darkMode={darkMode}
-          aria-label={darkMode ? translations.lightMode : translations.darkMode}
+          onClick={toggleLanguage} 
+          language={language}
+          aria-label={language === 'en' ? 'Cambiar a español' : 'Switch to English'}
         >
-          {darkMode ? <FaSun /> : <FaMoon />}
+          {language === 'en' ? 'ES' : 'EN'}
         </ToggleButton>
       </motion.div>
     </ToggleContainer>
   );
 };
 
-export default ThemeToggle;
+export default LanguageToggle;
