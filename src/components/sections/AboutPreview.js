@@ -108,7 +108,7 @@ const AboutPreview = () => {
         >
           <AboutImage>
             <img 
-              src={process.env.PUBLIC_URL + "image.jpg"} 
+              src={"https://i.ibb.co/MxWvTDWK/image.jpg"} 
               alt="Foto de perfil" 
             />
           </AboutImage>

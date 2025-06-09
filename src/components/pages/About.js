@@ -269,7 +269,7 @@ const About = () => {
               >
                 <AboutImage>
                   <img 
-                    src="https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/image3.jpg" 
+                    src="https://via.placeholder.com/400x500?text=Profile+Photo" 
                     alt="Profile photo" 
                   />
                 </AboutImage>
@@ -316,7 +316,7 @@ const About = () => {
                       </StoryText>
                     </StoryItem>
                   </AboutStorySection>
-                  <ResumeButton href="https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/JonathanPerezCV.pdf" download>
+                  <ResumeButton href="#" onClick={(e) => { e.preventDefault(); alert('CV download will be available soon!'); }}>
                     <FaDownload /> Download CV
                   </ResumeButton>
                 </AboutText>

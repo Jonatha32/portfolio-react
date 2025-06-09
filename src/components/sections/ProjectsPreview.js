@@ -175,7 +175,7 @@ const ProjectsPreview = () => {
       id: 1,
       title: 'Cassé',
       description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
-      image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/cassee.png",
+      image: "https://via.placeholder.com/400x300?text=Casse",
       tags: ['Flutter', 'Dart', 'Firebase'],
       github: 'https://github.com',
       demo: 'https://demo.com'
@@ -184,7 +184,7 @@ const ProjectsPreview = () => {
       id: 2,
       title: 'HBNB Clone',
       description: 'AirBNB clone (Holberton second quarter final project)',
-      image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/hbnb.png",
+      image: "https://via.placeholder.com/400x300?text=HBNB+Clone",
       tags: ['Python', 'MySQL'],
       github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
       demo: 'https://demo.com'
