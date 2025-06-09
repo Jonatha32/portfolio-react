@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+
 const ProjectsContainer = styled.section`
   padding: 100px 0;
   background-color: #fff;
@@ -174,7 +175,7 @@ const ProjectsPreview = () => {
       id: 1,
       title: 'Cassé',
       description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
-      image: process.env.PUBLIC_URL + "cassee.png",
+      image: `${process.env.PUBLIC_URL}/portfolio-react/cassee.png`,
       tags: ['Flutter', 'Dart', 'Firebase'],
       github: 'https://github.com',
       demo: 'https://demo.com'
@@ -183,7 +184,7 @@ const ProjectsPreview = () => {
       id: 2,
       title: 'HBNB Clone',
       description: 'AirBNB clone (Holberton second quarter final project)',
-      image: process.env.PUBLIC_URL + "hbnb.png",
+      image: `${process.env.PUBLIC_URL}/portfolio-react/hbnb.png`,
       tags: ['Python', 'MySQL'],
       github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
       demo: 'https://demo.com'
@@ -248,7 +249,7 @@ const ProjectsPreview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <MoreButton to="/projects" className="btn">
+          <MoreButton to="#/projects" className="btn">
             View all projects
           </MoreButton>
         </motion.div>
