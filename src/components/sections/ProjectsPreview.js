@@ -175,7 +175,7 @@ const ProjectsPreview = () => {
       id: 1,
       title: 'Cassé',
       description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
-      image: `${process.env.PUBLIC_URL}https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png`,
+      image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png",
       tags: ['Flutter', 'Dart', 'Firebase'],
       github: 'https://github.com',
       demo: 'https://demo.com'
