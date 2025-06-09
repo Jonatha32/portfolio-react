@@ -173,8 +173,8 @@ const Navbar = () => {
         >
           <img 
             src={isDarkMode 
-              ? "https://via.placeholder.com/150x80?text=Logo+Dark" 
-              : "https://via.placeholder.com/150x80?text=Logo+Light"} 
+              ? "https://github.com/Jonatha32/portfolio-react/blob/main/public/logo4-Photoroom.png?raw=true" 
+              : "https://github.com/Jonatha32/portfolio-react/blob/main/public/Logoprofesional.png?raw=true"} 
             alt="Logo" 
           />
         </motion.div>
