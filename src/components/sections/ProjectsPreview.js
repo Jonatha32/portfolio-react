@@ -164,9 +164,23 @@ const ProjectLink = styled.a`
 `;
 
 const MoreButton = styled(Link)`
-  display: block;
+  display: inline-block;
   text-align: center;
-  margin-top: 20px;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--primary-color-dark, #0056b3);
+  }
 `;
 
 const ProjectsPreview = () => {
@@ -175,7 +189,7 @@ const ProjectsPreview = () => {
       id: 1,
       title: 'Cassé',
       description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
-      image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png?raw=true",
+      image: process.env.PUBLIC_URL + '/cassee.png',
       tags: ['Flutter', 'Dart', 'Firebase'],
       github: 'https://github.com',
       demo: 'https://demo.com'
@@ -184,7 +198,7 @@ const ProjectsPreview = () => {
       id: 2,
       title: 'HBNB Clone',
       description: 'AirBNB clone (Holberton second quarter final project)',
-      image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/hbnb.png?raw=true",
+      image: process.env.PUBLIC_URL + '/hbnb.png',
       tags: ['Python', 'MySQL'],
       github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
       demo: 'https://demo.com'
@@ -249,7 +263,7 @@ const ProjectsPreview = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <MoreButton to="#/projects" className="btn">
+          <MoreButton to="/projects" className="btn">
             View all projects
           </MoreButton>
         </motion.div>
