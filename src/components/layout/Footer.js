@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import { FaT, FaX, FaXTwitter } from 'react-icons/fa6';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
@@ -45,17 +46,17 @@ const Footer = () => {
     <FooterContainer className="footer">
       <FooterContent>
         <SocialIcons>
-          <SocialIcon href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://github.com/Jonatha32" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </SocialIcon>
-          <SocialIcon href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://www.linkedin.com/in/jonathan-perez-31a5a5165/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </SocialIcon>
-          <SocialIcon href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
+          <SocialIcon href="https://x.com/Jonatha88199578" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter/>
           </SocialIcon>
-          <SocialIcon href="mailto:tu@email.com">
-            <FaEnvelope />
+          <SocialIcon href="https://www.instagram.com/jonathan_perez018/" target="_blank" rel="noopener noreferrer">
+            <FaInstagram/>
           </SocialIcon>
         </SocialIcons>
         <Copyright>

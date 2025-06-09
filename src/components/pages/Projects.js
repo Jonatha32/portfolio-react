@@ -138,13 +138,14 @@ const ProjectCard = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   position: relative;
   
   img {
     width: 100%;
     height: 100%;
+    align-items: center
     object-fit: cover;
     transition: transform 0.5s ease;
   }
@@ -184,7 +185,9 @@ const ProjectTag = styled.span`
   
   .dark-mode & {
     background-color: #333;
+    color: #fff;
   }
+
 `;
 
 const ProjectLinks = styled.div`
@@ -240,84 +243,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce App',
-      description: 'Una aplicación de comercio electrónico completa con carrito de compras, pagos y panel de administración.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      category: 'fullstack',
+      title: 'Cassé',
+      description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
+      image: process.env.PUBLIC_URL + "/cassee.png",
+      tags: ['Flutter', 'Dart', 'Firebase'],
+      category: 'mobile',
       github: 'https://github.com',
       demo: 'https://demo.com'
     },
     {
       id: 2,
-      title: 'Dashboard Analytics',
-      description: 'Panel de control para visualizar datos y estadísticas con gráficos interactivos.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Chart.js', 'Firebase'],
-      category: 'frontend',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      id: 3,
-      title: 'App de Tareas',
-      description: 'Aplicación para gestionar tareas con categorías, fechas límite y notificaciones.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Redux', 'Firebase'],
-      category: 'frontend',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      id: 4,
-      title: 'API RESTful',
-      description: 'API RESTful para gestión de usuarios, autenticación y autorización.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['Node.js', 'Express', 'MongoDB'],
+      title: 'HBNB Clone',
+      description: 'AirBNB clone (Holberton second quarter final project)',
+      image: process.env.PUBLIC_URL + "/hbnb.png",
+      tags: ['Python', 'MySQL'],
       category: 'backend',
-      github: 'https://github.com',
+      github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
       demo: 'https://demo.com'
     },
-    {
-      id: 5,
-      title: 'Blog Personal',
-      description: 'Blog personal con sistema de gestión de contenido personalizado.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['Next.js', 'Markdown', 'Tailwind CSS'],
-      category: 'frontend',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      id: 6,
-      title: 'Sistema de Reservas',
-      description: 'Sistema de reservas para restaurantes con gestión de mesas y horarios.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'Node.js', 'PostgreSQL'],
-      category: 'fullstack',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      id: 7,
-      title: 'Microservicio de Notificaciones',
-      description: 'Microservicio para envío de notificaciones por email, SMS y push.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['Node.js', 'RabbitMQ', 'Docker'],
-      category: 'backend',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    },
-    {
-      id: 8,
-      title: 'Aplicación de Clima',
-      description: 'Aplicación para consultar el clima actual y pronóstico de diferentes ciudades.',
-      image: 'https://via.placeholder.com/600x400',
-      tags: ['React', 'API', 'CSS'],
-      category: 'frontend',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
-    }
   ];
   
   const handleFilterChange = (newFilter) => {
@@ -359,9 +302,9 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>Mis Proyectos</h1>
+              <h1>My Projects</h1>
               <p>
-                Explora los proyectos en los que he trabajado recientemente
+                Explore the projects I've worked on recently
               </p>
             </motion.div>
           </ProjectsHeader>
@@ -377,7 +320,7 @@ const Projects = () => {
               </SearchIcon>
               <SearchInput 
                 type="text" 
-                placeholder="Buscar proyectos..." 
+                placeholder="Search projects..." 
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
@@ -394,7 +337,7 @@ const Projects = () => {
                 active={filter === 'all'} 
                 onClick={() => handleFilterChange('all')}
               >
-                Todos
+                All
               </FilterButton>
               <FilterButton 
                 active={filter === 'frontend'} 
@@ -413,6 +356,12 @@ const Projects = () => {
                 onClick={() => handleFilterChange('fullstack')}
               >
                 Full Stack
+              </FilterButton>
+              <FilterButton 
+                active={filter === 'mobile'} 
+                onClick={() => handleFilterChange('mobile')}
+              >
+                Mobile
               </FilterButton>
             </FilterContainer>
           </motion.div>
@@ -453,8 +402,8 @@ const Projects = () => {
             </ProjectsGrid>
           ) : (
             <NoResults>
-              <h3>No se encontraron proyectos</h3>
-              <p>Intenta con otra búsqueda o filtro</p>
+              <h3>No projects found</h3>
+              <p>Try another search or filter</p>
             </NoResults>
           )}
         </ProjectsContent>

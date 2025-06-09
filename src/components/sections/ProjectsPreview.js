@@ -130,6 +130,7 @@ const ProjectTag = styled.span`
   
   .dark-mode & {
     background-color: #333;
+    color: #fff;
   }
 `;
 

@@ -3,12 +3,20 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { 
   FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt, 
-  FaFigma, FaDocker, FaAws, FaJira, FaWordpress, FaNpm
+  FaFigma, FaDocker, FaAws, FaJira, FaWordpress, FaNpm,
+  FaPython, FaLinux, FaUserFriends, FaComments, FaBrain, 
+  FaHandshake, FaLightbulb, FaChartLine, FaLanguage,
+  FaPaintBrush, FaHeartbeat, FaFileExcel, FaPuzzlePiece
 } from 'react-icons/fa';
 import { 
   SiJavascript, SiTypescript, SiRedux, SiMongodb, SiExpress, 
   SiNextdotjs, SiGraphql, SiTailwindcss, SiFirebase, SiJest, 
-  SiPostgresql, SiMysql
+  SiPostgresql, SiMysql, SiShell,
+  SiFlutter,
+  SiDart, 
+  SiC,
+  SiLinux,
+  SiGnubash,
 } from 'react-icons/si';
 
 const SkillsContainer = styled.div`
@@ -158,33 +166,47 @@ const Skills = () => {
   const frontendSkills = [
     { name: 'React', icon: <FaReact className="icon" />, level: 95 },
     { name: 'JavaScript', icon: <SiJavascript className="icon" />, level: 90 },
-    { name: 'TypeScript', icon: <SiTypescript className="icon" />, level: 85 },
     { name: 'HTML5', icon: <FaHtml5 className="icon" />, level: 95 },
     { name: 'CSS3', icon: <FaCss3Alt className="icon" />, level: 90 },
-    { name: 'Redux', icon: <SiRedux className="icon" />, level: 85 },
-    { name: 'Next.js', icon: <SiNextdotjs className="icon" />, level: 80 },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="icon" />, level: 85 }
+    { name: 'Tailwind CSS', icon: <SiTailwindcss className="icon" />, level: 85 },
+    { name: 'Flutter', icon: <SiFlutter className="icon" />, level: 85 },
+    { name: 'Dart', icon: <SiDart className="icon" />, level: 85 }
+
   ];
   
   const backendSkills = [
-    { name: 'Node.js', icon: <FaNodeJs className="icon" />, level: 85 },
-    { name: 'Express', icon: <SiExpress className="icon" />, level: 80 },
-    { name: 'MongoDB', icon: <SiMongodb className="icon" />, level: 75 },
-    { name: 'GraphQL', icon: <SiGraphql className="icon" />, level: 70 },
-    { name: 'PostgreSQL', icon: <SiPostgresql className="icon" />, level: 75 },
+    { name: 'Python', icon: <FaPython className="icon" />, level: 85 },
+    { name: 'Firebase', icon: <SiFirebase className="icon" />, level: 75 },
+    { name: 'C', icon: <SiC className="icon" />, level: 70 },
     { name: 'MySQL', icon: <SiMysql className="icon" />, level: 80 },
-    { name: 'Firebase', icon: <SiFirebase className="icon" />, level: 85 }
   ];
   
   const toolsSkills = [
     { name: 'Git', icon: <FaGitAlt className="icon" />, level: 90 },
     { name: 'Docker', icon: <FaDocker className="icon" />, level: 75 },
     { name: 'AWS', icon: <FaAws className="icon" />, level: 70 },
-    { name: 'Jest', icon: <SiJest className="icon" />, level: 80 },
     { name: 'Figma', icon: <FaFigma className="icon" />, level: 75 },
     { name: 'Jira', icon: <FaJira className="icon" />, level: 85 },
     { name: 'npm', icon: <FaNpm className="icon" />, level: 90 },
-    { name: 'WordPress', icon: <FaWordpress className="icon" />, level: 80 }
+    { name: 'WordPress', icon: <FaWordpress className="icon" />, level: 80 },
+    { name: 'Shell Scripting', icon: <SiGnubash className="icon" />, level: 80 },
+  ];
+  
+  const softSkills = [
+    { name: 'Teamwork', icon: <FaUserFriends className="icon" />, level: 95 },
+    { name: 'Communication', icon: <FaComments className="icon" />, level: 90 },
+    { name: 'Problem Solving', icon: <FaPuzzlePiece className="icon" />, level: 95 },
+    { name: 'Adaptability', icon: <FaLightbulb className="icon" />, level: 90 },
+    { name: 'Leadership', icon: <FaChartLine className="icon" />, level: 85 },
+    { name: 'Creativity', icon: <FaPaintBrush className="icon" />, level: 90 },
+    { name: 'Emotional Intelligence', icon: <FaHeartbeat className="icon" />, level: 85 },
+  ];
+  
+  const otherSkills = [
+    { name: 'Project Management', icon: <FaHandshake className="icon" />, level: 85 },
+    { name: 'Languages', icon: <FaLanguage className="icon" />, level: 80 },
+    { name: 'UI/UX Design', icon: <FaFigma className="icon" />, level: 75 },
+    { name: 'Excel', icon: <FaFileExcel className="icon" />, level: 85 },
   ];
 
   return (
@@ -202,9 +224,9 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>Mis Habilidades</h1>
+              <h1>My Skills</h1>
               <p>
-                Estas son las tecnologías y herramientas con las que trabajo diariamente
+                These are the technologies and tools I work with on a daily basis.
               </p>
             </motion.div>
           </SkillsHeader>
@@ -215,7 +237,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <SectionTitle>Desarrollo Frontend</SectionTitle>
+              <SectionTitle>Front-end Development</SectionTitle>
               <SkillsGrid>
                 {frontendSkills.map((skill, index) => (
                   <motion.div
@@ -228,13 +250,6 @@ const Skills = () => {
                       {skill.icon}
                       <h3>{skill.name}</h3>
                       <ProgressContainer>
-                        <ProgressBar>
-                          <Progress level={skill.level} />
-                        </ProgressBar>
-                        <ProgressText>
-                          <span>Principiante</span>
-                          <span>Experto</span>
-                        </ProgressText>
                       </ProgressContainer>
                     </SkillCard>
                   </motion.div>
@@ -249,7 +264,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <SectionTitle>Desarrollo Backend</SectionTitle>
+              <SectionTitle>Back-end Development and DevOps</SectionTitle>
               <SkillsGrid>
                 {backendSkills.map((skill, index) => (
                   <motion.div
@@ -262,13 +277,6 @@ const Skills = () => {
                       {skill.icon}
                       <h3>{skill.name}</h3>
                       <ProgressContainer>
-                        <ProgressBar>
-                          <Progress level={skill.level} />
-                        </ProgressBar>
-                        <ProgressText>
-                          <span>Principiante</span>
-                          <span>Experto</span>
-                        </ProgressText>
                       </ProgressContainer>
                     </SkillCard>
                   </motion.div>
@@ -283,7 +291,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <SectionTitle>Herramientas y Otros</SectionTitle>
+              <SectionTitle>Tools and more</SectionTitle>
               <SkillsGrid>
                 {toolsSkills.map((skill, index) => (
                   <motion.div
@@ -296,13 +304,60 @@ const Skills = () => {
                       {skill.icon}
                       <h3>{skill.name}</h3>
                       <ProgressContainer>
-                        <ProgressBar>
-                          <Progress level={skill.level} />
-                        </ProgressBar>
-                        <ProgressText>
-                          <span>Principiante</span>
-                          <span>Experto</span>
-                        </ProgressText>
+                      </ProgressContainer>
+                    </SkillCard>
+                  </motion.div>
+                ))}
+              </SkillsGrid>
+            </motion.div>
+          </SkillsSection>
+          
+          <SkillsSection>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <SectionTitle>Soft Skills</SectionTitle>
+              <SkillsGrid>
+                {softSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                  >
+                    <SkillCard>
+                      {skill.icon}
+                      <h3>{skill.name}</h3>
+                      <ProgressContainer>
+                      </ProgressContainer>
+                    </SkillCard>
+                  </motion.div>
+                ))}
+              </SkillsGrid>
+            </motion.div>
+          </SkillsSection>
+          
+          <SkillsSection>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+            >
+              <SectionTitle>Other Skills</SectionTitle>
+              <SkillsGrid>
+                {otherSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1.0 + index * 0.1 }}
+                  >
+                    <SkillCard>
+                      {skill.icon}
+                      <h3>{skill.name}</h3>
+                      <ProgressContainer>
                       </ProgressContainer>
                     </SkillCard>
                   </motion.div>
