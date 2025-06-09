@@ -258,7 +258,7 @@ const Projects = () => {
       image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/hbnb.png",
       tags: ['Python', 'MySQL'],
       category: 'backend',
-      github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
+      github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
       demo: 'https://demo.com'
     },
   ];
