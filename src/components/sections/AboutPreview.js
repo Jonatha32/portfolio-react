@@ -108,7 +108,7 @@ const AboutPreview = () => {
         >
           <AboutImage>
             <img 
-              src={"https://i.ibb.co/MxWvTDWK/image.jpg"} 
+              src={"https://jona3433.imgbb.com/"} 
               alt="Foto de perfil" 
             />
           </AboutImage>
