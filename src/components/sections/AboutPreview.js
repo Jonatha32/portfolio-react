@@ -108,7 +108,7 @@ const AboutPreview = () => {
         >
           <AboutImage>
             <img 
-              src="https://github.com/Jonatha32/portfolio-react/blob/main/public/image.jpg?raw=true"
+              src={process.env.PUBLIC_URL + "/image.jpg"}
               alt="Foto de perfil" 
             />
           </AboutImage>
