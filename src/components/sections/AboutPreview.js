@@ -108,8 +108,8 @@ const AboutPreview = () => {
         >
           <AboutImage>
             <img 
-              src={"https://i.ibb.co/MxWvTDWK/image.jpg"} 
-              alt="Foto de perfil" 
+              src="https://i.ibb.co/MxWvTDW/image.jpg" 
+              alt="Profile photo" 
             />
           </AboutImage>
         </motion.div>
