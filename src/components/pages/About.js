@@ -269,7 +269,7 @@ const About = () => {
               >
                 <AboutImage>
                   <img 
-                    src="https://via.placeholder.com/400x500?text=Profile+Photo" 
+                    src="https://github.com/Jonatha32/portfolio-react/blob/main/public/image3.jpg?raw=true" 
                     alt="Profile photo" 
                   />
                 </AboutImage>
