@@ -1,0 +1,36 @@
+/* Estilos para el modo oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+/* Estilos para botones en modo oscuro */
+.dark-mode .btn {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.3);
+}
+
+.dark-mode .btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: #fff !important; /* Forzar color blanco */
+}
+
+.dark-mode .btn-outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Ajustes para el navbar en modo oscuro */
+.dark-mode nav {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para tarjetas y contenedores en modo oscuro */
+.dark-mode .card,
+.dark-mode .container-light {
+  background-color: #2a2a2a;
+  color: #f4f4f4;
+}
