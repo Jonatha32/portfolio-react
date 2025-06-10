@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import { LanguageContext } from '../../App';
 
 const ContactContainer = styled.div`
   padding: 120px 0 80px;
@@ -213,6 +214,7 @@ const Alert = styled.div`
 
 const Contact = () => {
   const form = useRef();
+  const { translations } = useContext(LanguageContext);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -262,7 +264,7 @@ const Contact = () => {
       setStatus({
         submitted: true,
         success: true,
-        message: 'Message sent successfully! I will respond as soon as possible.'
+        message: translations.messageSent
       });
       
       setFormData({
@@ -277,7 +279,7 @@ const Contact = () => {
       setStatus({
         submitted: true,
         success: false,
-        message: 'There was an error sending the message. Please try again.'
+        message: translations.messageError
       });
       setLoading(false);
     });
@@ -298,9 +300,9 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>Contact me</h1>
+              <h1>{translations.contactPageTitle}</h1>
               <p>
-                Do you have any questions or suggestions? Please feel free to contact me.
+                {translations.contactPageDescription}
               </p>
             </motion.div>
           </ContactHeader>
@@ -312,12 +314,12 @@ const Contact = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <ContactInfo>
-                <ContactTitle>Contact Information</ContactTitle>
+                <ContactTitle>{translations.contactInfo}</ContactTitle>
                 
                 <ContactInfoItem>
                   <FaEnvelope className="icon" />
                   <ContactInfoContent>
-                    <h4>Email</h4>
+                    <h4>{translations.email}</h4>
                     <p>jonaperez038@gmail.com</p>
                   </ContactInfoContent>
                 </ContactInfoItem>
@@ -325,7 +327,7 @@ const Contact = () => {
                 <ContactInfoItem>
                   <FaPhone className="icon" />
                   <ContactInfoContent>
-                    <h4>Mobile phone</h4>
+                    <h4>{translations.phone}</h4>
                     <p>+598 92 934 394</p>
                   </ContactInfoContent>
                 </ContactInfoItem>
@@ -333,7 +335,7 @@ const Contact = () => {
                 <ContactInfoItem>
                   <FaMapMarkerAlt className="icon" />
                   <ContactInfoContent>
-                    <h4>Location</h4>
+                    <h4>{translations.location}</h4>
                     <p>Canelones, Uruguay</p>
                   </ContactInfoContent>
                 </ContactInfoItem>
@@ -354,7 +356,7 @@ const Contact = () => {
                 
                 <FormRow>
                   <FormGroup>
-                    <FormLabel htmlFor="name">Name</FormLabel>
+                    <FormLabel htmlFor="name">{translations.formName}</FormLabel>
                     <FormInput 
                       type="text" 
                       id="name" 
@@ -366,7 +368,7 @@ const Contact = () => {
                   </FormGroup>
                   
                   <FormGroup>
-                    <FormLabel htmlFor="email">Email</FormLabel>
+                    <FormLabel htmlFor="email">{translations.email}</FormLabel>
                     <FormInput 
                       type="email" 
                       id="email" 
@@ -379,7 +381,7 @@ const Contact = () => {
                 </FormRow>
                 
                 <FormGroup>
-                  <FormLabel htmlFor="subject">Subject</FormLabel>
+                  <FormLabel htmlFor="subject">{translations.subject}</FormLabel>
                   <FormInput 
                     type="text" 
                     id="subject" 
@@ -391,7 +393,7 @@ const Contact = () => {
                 </FormGroup>
                 
                 <FormGroup>
-                  <FormLabel htmlFor="message">Message</FormLabel>
+                  <FormLabel htmlFor="message">{translations.message}</FormLabel>
                   <FormTextarea 
                     id="message" 
                     name="message" 
@@ -402,9 +404,9 @@ const Contact = () => {
                 </FormGroup>
                 
                 <FormButton type="submit" disabled={loading}>
-                  {loading ? 'Enviando...' : (
+                  {loading ? translations.sending : (
                     <>
-                      <FaPaperPlane /> Send Message
+                      <FaPaperPlane /> {translations.sendMessage}
                     </>
                   )}
                 </FormButton>

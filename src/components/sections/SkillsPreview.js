@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaDatabase, FaGitAlt } from 'react-icons/fa';
@@ -8,6 +8,7 @@ import { RiTailwindCssFill } from 'react-icons/ri';
 import { FaFlutter } from 'react-icons/fa6';
 import { DiFirebase } from 'react-icons/di';
 import { IoLogoFirebase } from 'react-icons/io5';
+import { LanguageContext } from '../../App';
 
 const SkillsContainer = styled.section`
   padding: 100px 0;
@@ -102,6 +103,8 @@ const MoreButton = styled(Link)`
 `;
 
 const SkillsPreview = () => {
+  const { translations } = useContext(LanguageContext);
+  
   const skills = [
     { name: 'React', icon: <FaReact className="icon" /> },
     { name: 'JavaScript', icon: <SiJavascript className="icon" /> },
@@ -127,9 +130,9 @@ const SkillsPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2>My Skills</h2>
+            <h2>{translations.mySkills}</h2>
             <p>
-              These are some of the technologies and tools I work with on a daily basis.
+              {translations.skillsDescription}
             </p>
           </motion.div>
         </SectionTitle>
@@ -158,7 +161,7 @@ const SkillsPreview = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <MoreButton to="/skills" className="btn">
-            View all my skills
+            {translations.viewAllSkills}
           </MoreButton>
         </motion.div>
       </SkillsContent>

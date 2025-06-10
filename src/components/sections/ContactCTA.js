@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../App';
 
 const ContactContainer = styled.section`
   padding: 100px 0;
@@ -48,6 +49,8 @@ const ContactButton = styled(Link)`
 `;
 
 const ContactCTA = () => {
+  const { translations } = useContext(LanguageContext);
+  
   return (
     <ContactContainer>
       <ContactContent>
@@ -57,7 +60,7 @@ const ContactCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <ContactTitle>Interested in working together?</ContactTitle>
+          <ContactTitle>{translations.workTogether}</ContactTitle>
         </motion.div>
         
         <motion.div
@@ -67,7 +70,7 @@ const ContactCTA = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <ContactText>
-            I am open to freelance opportunities, collaborations, and full-time positions. If you have a project in mind or just want to chat, please don't hesitate to contact me!
+            {translations.contactText}
           </ContactText>
         </motion.div>
         
@@ -78,7 +81,7 @@ const ContactCTA = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <ContactButton to="/contact">
-            Contact me
+            {translations.contactButton}
           </ContactButton>
         </motion.div>
       </ContactContent>

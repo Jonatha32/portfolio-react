@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaGithub, FaExternalLinkAlt, FaSearch } from 'react-icons/fa';
+import { LanguageContext } from '../../App';
 
 const ProjectsContainer = styled.div`
   padding: 120px 0 80px;
@@ -239,12 +240,13 @@ const NoResults = styled.div`
 const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const { translations } = useContext(LanguageContext);
   
   const projects = [
     {
       id: 1,
       title: 'Cassé',
-      description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
+      description: translations.casseDescription,
       image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png?raw=true",
       tags: ['Flutter', 'Dart', 'Firebase'],
       category: 'mobile',
@@ -254,7 +256,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'HBNB Clone',
-      description: 'AirBNB clone (Holberton second quarter final project)',
+      description: translations.hbnbDescription,
       image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/hbnb.png?raw=true",
       tags: ['Python', 'MySQL'],
       category: 'backend',
@@ -302,9 +304,9 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>My Projects</h1>
+              <h1>{translations.projectsPageTitle}</h1>
               <p>
-                Explore the projects I've worked on recently
+                {translations.projectsPageDescription}
               </p>
             </motion.div>
           </ProjectsHeader>
@@ -320,7 +322,7 @@ const Projects = () => {
               </SearchIcon>
               <SearchInput 
                 type="text" 
-                placeholder="Search projects..." 
+                placeholder={translations.searchProjects} 
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
@@ -337,31 +339,31 @@ const Projects = () => {
                 active={filter === 'all'} 
                 onClick={() => handleFilterChange('all')}
               >
-                All
+                {translations.all}
               </FilterButton>
               <FilterButton 
                 active={filter === 'frontend'} 
                 onClick={() => handleFilterChange('frontend')}
               >
-                Frontend
+                {translations.frontend}
               </FilterButton>
               <FilterButton 
                 active={filter === 'backend'} 
                 onClick={() => handleFilterChange('backend')}
               >
-                Backend
+                {translations.backend}
               </FilterButton>
               <FilterButton 
                 active={filter === 'fullstack'} 
                 onClick={() => handleFilterChange('fullstack')}
               >
-                Full Stack
+                {translations.fullstack}
               </FilterButton>
               <FilterButton 
                 active={filter === 'mobile'} 
                 onClick={() => handleFilterChange('mobile')}
               >
-                Mobile
+                {translations.mobile}
               </FilterButton>
             </FilterContainer>
           </motion.div>
@@ -389,10 +391,10 @@ const Projects = () => {
                       </ProjectTags>
                       <ProjectLinks>
                         <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer">
-                          <FaGithub /> GitHub
+                          <FaGithub /> {translations.github}
                         </ProjectLink>
                         <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <FaExternalLinkAlt /> Demo
+                          <FaExternalLinkAlt /> {translations.demo}
                         </ProjectLink>
                       </ProjectLinks>
                     </ProjectInfo>
@@ -402,8 +404,8 @@ const Projects = () => {
             </ProjectsGrid>
           ) : (
             <NoResults>
-              <h3>No projects found</h3>
-              <p>Try another search or filter</p>
+              <h3>{translations.noProjectsFound}</h3>
+              <p>{translations.tryAnotherSearch}</p>
             </NoResults>
           )}
         </ProjectsContent>

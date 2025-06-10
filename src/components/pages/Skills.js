@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { 
@@ -18,6 +18,7 @@ import {
   SiLinux,
   SiGnubash,
 } from 'react-icons/si';
+import { LanguageContext } from '../../App';
 
 const SkillsContainer = styled.div`
   padding: 120px 0 80px;
@@ -163,6 +164,8 @@ const ProgressText = styled.div`
 `;
 
 const Skills = () => {
+  const { translations } = useContext(LanguageContext);
+  
   const frontendSkills = [
     { name: 'React', icon: <FaReact className="icon" />, level: 95 },
     { name: 'JavaScript', icon: <SiJavascript className="icon" />, level: 90 },
@@ -182,31 +185,31 @@ const Skills = () => {
   ];
   
   const toolsSkills = [
-    { name: 'Git', icon: <FaGitAlt className="icon" />, level: 90 },
-    { name: 'Docker', icon: <FaDocker className="icon" />, level: 75 },
-    { name: 'AWS', icon: <FaAws className="icon" />, level: 70 },
-    { name: 'Figma', icon: <FaFigma className="icon" />, level: 75 },
-    { name: 'Jira', icon: <FaJira className="icon" />, level: 85 },
-    { name: 'npm', icon: <FaNpm className="icon" />, level: 90 },
-    { name: 'WordPress', icon: <FaWordpress className="icon" />, level: 80 },
-    { name: 'Shell Scripting', icon: <SiGnubash className="icon" />, level: 80 },
+    { name: translations.git, icon: <FaGitAlt className="icon" />, level: 90 },
+    { name: translations.docker, icon: <FaDocker className="icon" />, level: 75 },
+    { name: translations.aws, icon: <FaAws className="icon" />, level: 70 },
+    { name: translations.figma, icon: <FaFigma className="icon" />, level: 75 },
+    { name: translations.jira, icon: <FaJira className="icon" />, level: 85 },
+    { name: translations.npm, icon: <FaNpm className="icon" />, level: 90 },
+    { name: translations.wordpress, icon: <FaWordpress className="icon" />, level: 80 },
+    { name: translations.shellScripting, icon: <SiGnubash className="icon" />, level: 80 },
   ];
   
   const softSkills = [
-    { name: 'Teamwork', icon: <FaUserFriends className="icon" />, level: 95 },
-    { name: 'Communication', icon: <FaComments className="icon" />, level: 90 },
-    { name: 'Problem Solving', icon: <FaPuzzlePiece className="icon" />, level: 95 },
-    { name: 'Adaptability', icon: <FaLightbulb className="icon" />, level: 90 },
-    { name: 'Leadership', icon: <FaChartLine className="icon" />, level: 85 },
-    { name: 'Creativity', icon: <FaPaintBrush className="icon" />, level: 90 },
-    { name: 'Emotional Intelligence', icon: <FaHeartbeat className="icon" />, level: 85 },
+    { name: translations.teamwork, icon: <FaUserFriends className="icon" />, level: 95 },
+    { name: translations.communication, icon: <FaComments className="icon" />, level: 90 },
+    { name: translations.problemSolving, icon: <FaPuzzlePiece className="icon" />, level: 95 },
+    { name: translations.adaptability, icon: <FaLightbulb className="icon" />, level: 90 },
+    { name: translations.leadership, icon: <FaChartLine className="icon" />, level: 85 },
+    { name: translations.creativity, icon: <FaPaintBrush className="icon" />, level: 90 },
+    { name: translations.emotionalIntelligence, icon: <FaHeartbeat className="icon" />, level: 85 },
   ];
   
   const otherSkills = [
-    { name: 'Project Management', icon: <FaHandshake className="icon" />, level: 85 },
-    { name: 'Languages', icon: <FaLanguage className="icon" />, level: 80 },
-    { name: 'UI/UX Design', icon: <FaFigma className="icon" />, level: 75 },
-    { name: 'Excel', icon: <FaFileExcel className="icon" />, level: 85 },
+    { name: translations.projectManagement, icon: <FaHandshake className="icon" />, level: 85 },
+    { name: translations.languages, icon: <FaLanguage className="icon" />, level: 80 },
+    { name: translations.uiUxDesign, icon: <FaFigma className="icon" />, level: 75 },
+    { name: translations.excel, icon: <FaFileExcel className="icon" />, level: 85 },
   ];
 
   return (
@@ -224,9 +227,9 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>My Skills</h1>
+              <h1>{translations.skillsPageTitle}</h1>
               <p>
-                These are the technologies and tools I work with on a daily basis.
+                {translations.skillsPageDescription}
               </p>
             </motion.div>
           </SkillsHeader>
@@ -237,7 +240,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <SectionTitle>Front-end Development</SectionTitle>
+              <SectionTitle>{translations.frontendDev}</SectionTitle>
               <SkillsGrid>
                 {frontendSkills.map((skill, index) => (
                   <motion.div
@@ -264,7 +267,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <SectionTitle>Back-end Development and DevOps</SectionTitle>
+              <SectionTitle>{translations.backendDevOps}</SectionTitle>
               <SkillsGrid>
                 {backendSkills.map((skill, index) => (
                   <motion.div
@@ -291,7 +294,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <SectionTitle>Tools and more</SectionTitle>
+              <SectionTitle>{translations.toolsMore}</SectionTitle>
               <SkillsGrid>
                 {toolsSkills.map((skill, index) => (
                   <motion.div
@@ -318,7 +321,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <SectionTitle>Soft Skills</SectionTitle>
+              <SectionTitle>{translations.softSkills}</SectionTitle>
               <SkillsGrid>
                 {softSkills.map((skill, index) => (
                   <motion.div
@@ -345,7 +348,7 @@ const Skills = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.0 }}
             >
-              <SectionTitle>Other Skills</SectionTitle>
+              <SectionTitle>{translations.otherSkills}</SectionTitle>
               <SkillsGrid>
                 {otherSkills.map((skill, index) => (
                   <motion.div

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaDownload, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import { LanguageContext } from '../../App';
 
 const AboutContainer = styled.div`
   padding: 120px 0 80px;
@@ -238,6 +239,8 @@ const StoryText = styled.div`
 `;
 
 const About = () => {
+  const { translations } = useContext(LanguageContext);
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -253,9 +256,9 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1>About Me</h1>
+              <h1>{translations.aboutPageTitle}</h1>
               <p>
-                Learn more about my professional career, education, and passions.
+                {translations.aboutPageDescription}
               </p>
             </motion.div>
           </AboutHeader>
@@ -279,43 +282,43 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <AboutText>
-                  <SectionTitle>My Story</SectionTitle>
-                  <h3>What defines me?</h3>
+                  <SectionTitle>{translations.myStory}</SectionTitle>
+                  <h3>{translations.whatDefinesMe}</h3>
                   <AboutStorySection>
                     <StoryItem>
                       <StoryIcon>🎤</StoryIcon>
                       <StoryText>
-                        <strong>Artistic Soul</strong>
-                        <p>I write songs, compose lyrics, and live every musical process with my heart.</p>
+                        <strong>{translations.artisticSoul}</strong>
+                        <p>{translations.artisticSoulDesc}</p>
                       </StoryText>
                     </StoryItem>
                     
                     <StoryItem>
                       <StoryIcon>💻</StoryIcon>
                       <StoryText>
-                        <strong>Tech Enthusiast</strong>
-                        <p>I enjoy solving problems, creating experiences, and learning new technologies.</p>
+                        <strong>{translations.techEnthusiast}</strong>
+                        <p>{translations.techEnthusiastDesc}</p>
                       </StoryText>
                     </StoryItem>
                     
                     <StoryItem>
                       <StoryIcon>☀️</StoryIcon>
                       <StoryText>
-                        <strong>Life Philosophy</strong>
-                        <p>I believe in perseverance, presence, and the power of visualizing what you want.</p>
+                        <strong>{translations.lifePhilosophy}</strong>
+                        <p>{translations.lifePhilosophyDesc}</p>
                       </StoryText>
                     </StoryItem>
                     
                     <StoryItem>
                       <StoryIcon>🌍</StoryIcon>
                       <StoryText>
-                        <strong>Diverse Interests</strong>
-                        <p>I love languages, science, cinema, philosophy, soccer, and above all... art in all its forms.</p>
+                        <strong>{translations.diverseInterests}</strong>
+                        <p>{translations.diverseInterestsDesc}</p>
                       </StoryText>
                     </StoryItem>
                   </AboutStorySection>
                   <ResumeButton href="#" onClick={(e) => { e.preventDefault(); alert('CV download will be available soon!'); }}>
-                    <FaDownload /> Download CV
+                    <FaDownload /> {translations.downloadCV}
                   </ResumeButton>
                 </AboutText>
               </motion.div>
@@ -328,49 +331,48 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <SectionTitle>Experience in teamwork</SectionTitle>
+              <SectionTitle>{translations.experienceTitle}</SectionTitle>
               <TimelineContainer>
                 <TimelineItem>
                   <TimelineHeader>
                     <FaBriefcase className="icon" />
-                    <TimelineTitle>Development of a Simple Shell in C</TimelineTitle>
+                    <TimelineTitle>{translations.shellProject}</TimelineTitle>
                     <TimelinePeriod>2024</TimelinePeriod>
                   </TimelineHeader>
-                  <TimelineSubtitle>Holberton School — Group project</TimelineSubtitle>
+                  <TimelineSubtitle>{translations.shellProjectSubtitle}</TimelineSubtitle>
                   <TimelineText>
-                  <p>• Implementation of a simple shell capable of executing system commands.</p> 
-                  <p>• Process management, signals, standard input/output, and manual parsing.</p>
-                  <p>• Collaborative work using Git and agile methodologies.</p>
+                  <p>{translations.shellProjectDesc1}</p> 
+                  <p>{translations.shellProjectDesc2}</p>
+                  <p>{translations.shellProjectDesc3}</p>
                   </TimelineText>
                 </TimelineItem>
                 
                 <TimelineItem>
                   <TimelineHeader>
                     <FaBriefcase className="icon" />
-                    <TimelineTitle>Copy of the Airbnb Web Interface</TimelineTitle>
+                    <TimelineTitle>{translations.airbnbProject}</TimelineTitle>
                     <TimelinePeriod>2025</TimelinePeriod>
                   </TimelineHeader>
-                  <TimelineSubtitle>Holberton School — Group project with Python & SQL</TimelineSubtitle>
+                  <TimelineSubtitle>{translations.airbnbProjectSubtitle}</TimelineSubtitle>
                   <TimelineText>
-                  <p>• Backend development with Python and MySQL database connection.</p> 
-                  <p>• Design and construction of RESTful APIs.</p>
-                  <p>• Route management, data persistence, and unit testing.</p>
+                  <p>{translations.airbnbProjectDesc1}</p> 
+                  <p>{translations.airbnbProjectDesc2}</p>
+                  <p>{translations.airbnbProjectDesc3}</p>
                   </TimelineText>
                 </TimelineItem>
 
                 <TimelineItem>
                   <TimelineHeader>
                     <FaBriefcase className="icon" />
-                    <TimelineTitle>Cassé — Application to promote the circular economy</TimelineTitle>
+                    <TimelineTitle>{translations.casseProject}</TimelineTitle>
                     <TimelinePeriod>2025</TimelinePeriod>
                   </TimelineHeader>
-                  <TimelineSubtitle>Final Project of Holberton School — Flutter & Firebase</TimelineSubtitle>
+                  <TimelineSubtitle>{translations.casseProjectSubtitle}</TimelineSubtitle>
                   <TimelineText>
-                  <p>• Design and implementation of a multiplatform app in Flutter.</p> 
-                  <p>• Integration with Firebase (Authentication, Firestore, Storage).</p>
-                  <p>• Teamwork using Scrum methodologies and version control in GitHub.</p>
-                  <p>• UX/UI focus and mobile-first development.</p>
-
+                  <p>{translations.casseProjectDesc1}</p> 
+                  <p>{translations.casseProjectDesc2}</p>
+                  <p>{translations.casseProjectDesc3}</p>
+                  <p>{translations.casseProjectDesc4}</p>
                   </TimelineText>
                 </TimelineItem>
               </TimelineContainer>
@@ -383,32 +385,32 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <SectionTitle>Education</SectionTitle>
+              <SectionTitle>{translations.educationTitle}</SectionTitle>
               <TimelineContainer>
                 <TimelineItem>
                   <TimelineHeader>
                     <FaGraduationCap className="icon" />
-                    <TimelineTitle>Full Stack Software Developer</TimelineTitle>
+                    <TimelineTitle>{translations.fullstackDev}</TimelineTitle>
                     <TimelinePeriod>2024 - 2025</TimelinePeriod>
                   </TimelineHeader>
-                  <TimelineSubtitle>Holberton School Uruguay</TimelineSubtitle>
+                  <TimelineSubtitle>{translations.fullstackDevSubtitle}</TimelineSubtitle>
                   <TimelineText>
-                  <p>• Intensive focus on backend and frontend development, with peer-learning methodologies and real projects.</p> 
-                  <p>• Development in C, Python, HTML, CSS, JavaScript, React, Flutter, Firebase, MySQL, Git.</p>
-                  <p>• Experience in teamwork, problem solving, and agile methodologies.</p>
+                  <p>{translations.fullstackDevDesc1}</p> 
+                  <p>{translations.fullstackDevDesc2}</p>
+                  <p>{translations.fullstackDevDesc3}</p>
                   </TimelineText>
                 </TimelineItem>
                 
                 <TimelineItem>
                   <TimelineHeader>
                     <FaGraduationCap className="icon" />
-                    <TimelineTitle>Technical Degree in Business Administration</TimelineTitle>
+                    <TimelineTitle>{translations.businessDegree}</TimelineTitle>
                     <TimelinePeriod>2025</TimelinePeriod>
                   </TimelineHeader>
-                  <TimelineSubtitle>University of the Republic (UdelaR) – School of Economic Sciences and Administration</TimelineSubtitle>
+                  <TimelineSubtitle>{translations.businessDegreeSubtitle}</TimelineSubtitle>
                   <TimelineText>
-                  <p>• Training in management, accounting, economics, marketing, human resources, and law.</p> 
-                  <p>• Focus on critical thinking, problem-solving, and real-world administrative practices.</p>
+                  <p>{translations.businessDegreeDesc1}</p> 
+                  <p>{translations.businessDegreeDesc2}</p>
                   </TimelineText>
                 </TimelineItem>
               </TimelineContainer>

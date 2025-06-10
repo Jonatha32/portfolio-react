@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { LanguageContext } from '../../App';
 
 
 const ProjectsContainer = styled.section`
@@ -184,11 +185,13 @@ const MoreButton = styled(Link)`
 `;
 
 const ProjectsPreview = () => {
+  const { translations } = useContext(LanguageContext);
+  
   const projects = [
     {
       id: 1,
       title: 'Cassé',
-      description: 'App for buying and selling used electronic products that promotes the circular economy and recycling',
+      description: translations.casseDescription,
       image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/cassee.png",
       tags: ['Flutter', 'Dart', 'Firebase'],
       github: 'https://github.com',
@@ -197,7 +200,7 @@ const ProjectsPreview = () => {
     {
       id: 2,
       title: 'HBNB Clone',
-      description: 'AirBNB clone (Holberton second quarter final project)',
+      description: translations.hbnbDescription,
       image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/hbnb.png",
       tags: ['Python', 'MySQL'],
       github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
@@ -215,9 +218,9 @@ const ProjectsPreview = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2>My Projects</h2>
+            <h2>{translations.myProjects}</h2>
             <p>
-              These are some of the projects I have worked on recently.
+              {translations.projectsDescription}
             </p>
           </motion.div>
         </SectionTitle>
@@ -245,10 +248,10 @@ const ProjectsPreview = () => {
                   </ProjectTags>
                   <ProjectLinks>
                     <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer">
-                      <FaGithub /> GitHub
+                      <FaGithub /> {translations.github}
                     </ProjectLink>
                     <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <FaExternalLinkAlt /> Demo
+                      <FaExternalLinkAlt /> {translations.demo}
                     </ProjectLink>
                   </ProjectLinks>
                 </ProjectInfo>
@@ -264,7 +267,7 @@ const ProjectsPreview = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <MoreButton to="/projects" className="btn">
-            View all projects
+            {translations.viewAllProjects}
           </MoreButton>
         </motion.div>
       </ProjectsContent>

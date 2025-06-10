@@ -10,6 +10,7 @@ import Projects from './components/pages/Projects';
 import Contact from './components/pages/Contact';
 import ThemeToggle from './components/layout/ThemeToggle';
 import LanguageToggle from './components/layout/LanguageToggle';
+import ScrollToTopButton from './components/layout/ScrollToTop';
 import { translations } from './translations';
 import './App.css';
 import './darkMode.css';
@@ -51,6 +52,7 @@ function App() {
         <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
           <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <LanguageToggle language={language} toggleLanguage={toggleLanguage} />
+          <ScrollToTopButton />
           <Navbar />
           <AnimatePresence mode="wait">
             <Routes>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { FaT, FaX, FaXTwitter } from 'react-icons/fa6';
 import styled from 'styled-components';
+import { LanguageContext } from '../../App';
 
 const FooterContainer = styled.footer`
   background-color: #fff;
@@ -41,6 +42,7 @@ const Copyright = styled.p`
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { translations } = useContext(LanguageContext);
   
   return (
     <FooterContainer className="footer">
@@ -60,7 +62,7 @@ const Footer = () => {
           </SocialIcon>
         </SocialIcons>
         <Copyright>
-          &copy; {currentYear} My Professional Portfolio | All rights reserved.
+          &copy; {currentYear} {translations.portfolio} | {translations.copyright}
         </Copyright>
       </FooterContent>
     </FooterContainer>
