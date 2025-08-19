@@ -167,7 +167,14 @@ export const translations = {
     sendMessage: "Send Message",
     sending: "Sending...",
     messageSent: "Message sent successfully! I will respond as soon as possible.",
-    messageError: "There was an error sending the message. Please try again."
+    messageError: "There was an error sending the message. Please try again.",
+    
+    // AI Chat
+    aiAssistant: "AI Assistant",
+    aiGreeting: "Hi! I'm Jonathan's assistant. How can I help you?",
+    typeMessage: "Type your message...",
+    typing: "Typing...",
+    aiConnectionError: "Sorry, I couldn't connect to the AI server. Make sure Ollama is running."
   },
   es: {
     // Navbar
@@ -336,6 +343,13 @@ export const translations = {
     sendMessage: "Enviar Mensaje",
     sending: "Enviando...",
     messageSent: "¡Mensaje enviado con éxito! Responderé lo antes posible.",
-    messageError: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    messageError: "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    
+    // AI Chat
+    aiAssistant: "Asistente IA",
+    aiGreeting: "¡Hola! Soy el asistente de Jonathan. ¿En qué puedo ayudarte?",
+    typeMessage: "Escribe tu mensaje...",
+    typing: "Escribiendo...",
+    aiConnectionError: "Lo siento, no pude conectar con el servidor de IA. Asegúrate de que Ollama esté ejecutándose."
   }
 };

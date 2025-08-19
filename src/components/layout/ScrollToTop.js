@@ -7,7 +7,7 @@ import { LanguageContext } from '../../App';
 const ScrollButton = styled.button`
   position: fixed;
   bottom: 20px;
-  right: 140px; // Positioned to the left of the language toggle
+  right: 200px; // Positioned to the left of the AI chat
   z-index: 1000;
   background-color: #6c63ff;
   color: #fff;
