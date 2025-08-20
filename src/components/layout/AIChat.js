@@ -215,10 +215,10 @@ const AIChat = () => {
     const isSpanish = /[ñáéíóúü¿¡]/i.test(userMessage) || ['qué', 'quién', 'cómo', 'dónde', 'cuándo', 'por qué'].some(w => userMessage.toLowerCase().includes(w));
 
     try {
-      // Detectar si estamos en desarrollo o producción
+      // URL del backend en Vercel (cambiar por tu dominio de Vercel)
       const apiUrl = process.env.NODE_ENV === 'development' 
         ? 'http://localhost:3000/api/chat'
-        : '/api/chat';
+        : 'https://portfolio-backend-jonatha32.vercel.app/api/chat';
 
       const response = await fetch(apiUrl, {
         method: 'POST',

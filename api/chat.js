@@ -2,8 +2,9 @@
 const requests = new Map();
 
 export default async function handler(req, res) {
-  // Configurar CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Configurar CORS para GitHub Pages
+  res.setHeader('Access-Control-Allow-Origin', 'https://jonatha32.github.io');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
