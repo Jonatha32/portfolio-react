@@ -215,27 +215,20 @@ const AIChat = () => {
     const isSpanish = /[ñáéíóúü¿¡]/i.test(userMessage) || ['qué', 'quién', 'cómo', 'dónde', 'cuándo', 'por qué'].some(w => userMessage.toLowerCase().includes(w));
 
     try {
-      const response = await fetch('http://localhost:11434/api/generate', {
+      // Detectar si estamos en desarrollo o producción
+      const apiUrl = process.env.NODE_ENV === 'development' 
+        ? 'http://localhost:3000/api/chat'
+        : '/api/chat';
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'llama3.2:3b',
-          prompt: `${systemPrompt}
-
-INFORMACIÓN DE REFERENCIA SOBRE JONATHAN:
-${JSON.stringify(personalInfo, null, 2)}
-
-Pregunta del usuario: ${userMessage}
-
-Respuesta (máximo 60 palabras):`,
-          stream: false,
-          options: {
-            temperature: 0.7,
-            top_p: 0.9,
-            num_predict: 100
-          }
+          message: userMessage,
+          personalInfo,
+          systemPrompt
         })
       });
 

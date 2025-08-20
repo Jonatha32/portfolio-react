@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/chat.js": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "OLLAMA_URL": "@ollama-url"
+  }
+}
