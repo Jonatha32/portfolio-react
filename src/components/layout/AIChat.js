@@ -218,7 +218,7 @@ const AIChat = () => {
       // URL del backend en Vercel (cambiar por tu dominio de Vercel)
       const apiUrl = process.env.NODE_ENV === 'development' 
         ? 'http://localhost:3000/api/chat'
-        : 'https://portfolio-backend-jonatha32.vercel.app/api/chat';
+        : 'https://portfolio-railway-production.up.railway.app/api/chat';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
