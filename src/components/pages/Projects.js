@@ -146,7 +146,6 @@ const ProjectImage = styled.div`
   img {
     width: 100%;
     height: 100%;
-    align-items: center
     object-fit: cover;
     transition: transform 0.5s ease;
   }
@@ -188,7 +187,6 @@ const ProjectTag = styled.span`
     background-color: #333;
     color: #fff;
   }
-
 `;
 
 const ProjectLinks = styled.div`
@@ -250,8 +248,8 @@ const Projects = () => {
       image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png?raw=true",
       tags: ['Flutter', 'Dart', 'Firebase'],
       category: 'mobile',
-      github: 'https://github.com',
-      demo: 'https://demo.com'
+      github: 'https://github.com/RodrigoNovelli/Cass-',
+      demo: 'https://jonatha32.github.io/Casse_Landing_Page/'
     },
     {
       id: 2,
@@ -260,8 +258,16 @@ const Projects = () => {
       image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/hbnb.png?raw=true",
       tags: ['Python', 'MySQL'],
       category: 'backend',
-      github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
-      demo: 'https://demo.com'
+      github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
+    },
+    {
+      id: 3,
+      title: 'Arbook',
+      description: translations.arbookDescription,
+      image: "https://github.com/Jonatha32/Arbook/blob/main/assets/logo.png?raw=true",
+      tags: ['Dart', 'Flutter', 'Firebase'],
+      category: 'mobile',
+      github: 'https://github.com/Jonatha32/Arbook',
     },
   ];
   

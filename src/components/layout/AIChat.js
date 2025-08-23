@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
 import { LanguageContext } from '../../App';
-import { personalInfo, systemPrompt } from '../../data/personalInfo';
+import { personalInfo, personalInfoEN, systemPrompt } from '../../data/personalInfo';
 
 const ChatContainer = styled.div`
   position: fixed;
@@ -174,33 +174,84 @@ const AIChat = () => {
 
   const getRelevantInfo = (message) => {
     const msg = message.toLowerCase();
-    const keywords = {
-      profile: ['quién', 'who', 'jonathan', 'jona', 'perfil', 'profile'],
-      projects: ['proyectos', 'projects', 'cassé', 'airbnb', 'shell'],
-      music: ['música', 'music', 'cantautor', 'singer', 'cantar'],
-      tech: ['tecnologías', 'technologies', 'skills', 'habilidades', 'programar'],
-      contact: ['contacto', 'contact', 'email', 'trabajo', 'work']
-    };
-
-    let relevantInfo = '';
+    let info = {};
     
-    if (keywords.profile.some(k => msg.includes(k))) {
-      relevantInfo += `Profile: ${personalInfo.basic.name} (${personalInfo.basic.nickname}), ${personalInfo.basic.profession} from ${personalInfo.basic.location}. `;
+    // Detectar qué información necesita
+    if (msg.includes('habilidades') || msg.includes('skills') || msg.includes('tecnolog') || msg.includes('program') || msg.includes('sabe')) {
+      info.skills = personalInfo.education.skills;
+      info.softSkills = personalInfo.education.softSkills;
     }
-    if (keywords.projects.some(k => msg.includes(k))) {
-      relevantInfo += `Projects: Cassé (Flutter app for circular economy), AirBNB Clone (Python/MySQL), Simple Shell (C). `;
+    
+    if (msg.includes('proyecto') || msg.includes('project') || msg.includes('cassé') || msg.includes('airbnb') || msg.includes('shell')) {
+      info.projects = personalInfo.projects;
     }
-    if (keywords.music.some(k => msg.includes(k))) {
-      relevantInfo += `Music: ${personalInfo.music.role} - ${personalInfo.music.description}. Influences: ${personalInfo.music.influences.join(', ')}. `;
+    
+    if (msg.includes('música') || msg.includes('music') || msg.includes('cantar') || msg.includes('cantautor')) {
+      info.music = personalInfo.music;
     }
-    if (keywords.tech.some(k => msg.includes(k))) {
-      relevantInfo += `Technologies: ${personalInfo.education.skills.join(', ')}. `;
+    
+    if (msg.includes('estudia') || msg.includes('educación') || msg.includes('education') || msg.includes('holberton') || msg.includes('universidad')) {
+      info.education = personalInfo.education.current;
     }
-    if (keywords.contact.some(k => msg.includes(k))) {
-      relevantInfo += `Contact: ${personalInfo.contact.email}. Available for: ${personalInfo.contact.available}. `;
+    
+    if (msg.includes('contacto') || msg.includes('contact') || msg.includes('email') || msg.includes('trabajo') || msg.includes('work')) {
+      info.contact = personalInfo.contact;
     }
+    
+    if (msg.includes('valores') || msg.includes('values') || msg.includes('personalidad') || msg.includes('interests') || msg.includes('intereses')) {
+      info.personality = personalInfo.personality;
+    }
+    
+    if (msg.includes('quién') || msg.includes('who') || msg.includes('jonathan') || msg.includes('jona') || msg.includes('perfil') || msg.includes('profile')) {
+      info.basic = personalInfo.basic;
+    }
+    
+    // Si no detecta nada específico, incluir info básica
+    if (Object.keys(info).length === 0) {
+      info.basic = personalInfo.basic;
+    }
+    
+    return JSON.stringify(info, null, 2);
+  };
 
-    return relevantInfo;
+  const getRelevantInfoEN = (message) => {
+    const msg = message.toLowerCase();
+    let info = {};
+    
+    if (msg.includes('skills') || msg.includes('technolog') || msg.includes('program') || msg.includes('know')) {
+      info.skills = personalInfoEN.education.skills;
+      info.softSkills = personalInfoEN.education.softSkills;
+    }
+    
+    if (msg.includes('project') || msg.includes('cassé') || msg.includes('airbnb') || msg.includes('shell')) {
+      info.projects = personalInfoEN.projects;
+    }
+    
+    if (msg.includes('music') || msg.includes('sing') || msg.includes('song')) {
+      info.music = personalInfoEN.music;
+    }
+    
+    if (msg.includes('stud') || msg.includes('education') || msg.includes('holberton') || msg.includes('university')) {
+      info.education = personalInfoEN.education.current;
+    }
+    
+    if (msg.includes('contact') || msg.includes('email') || msg.includes('work')) {
+      info.contact = personalInfoEN.contact;
+    }
+    
+    if (msg.includes('values') || msg.includes('personality') || msg.includes('interests')) {
+      info.personality = personalInfoEN.personality;
+    }
+    
+    if (msg.includes('who') || msg.includes('jonathan') || msg.includes('jona') || msg.includes('profile')) {
+      info.basic = personalInfoEN.basic;
+    }
+    
+    if (Object.keys(info).length === 0) {
+      info.basic = personalInfoEN.basic;
+    }
+    
+    return JSON.stringify(info, null, 2);
   };
 
   const sendMessage = async () => {
@@ -211,29 +262,61 @@ const AIChat = () => {
     setMessages(prev => [...prev, { text: userMessage, isUser: true }]);
     setIsLoading(true);
 
-    const relevantInfo = getRelevantInfo(userMessage);
-    const isSpanish = /[ñáéíóúü¿¡]/i.test(userMessage) || ['qué', 'quién', 'cómo', 'dónde', 'cuándo', 'por qué'].some(w => userMessage.toLowerCase().includes(w));
+    const isEnglish = /\b(what|who|how|where|when|why|hello|hi|thanks|project|skill|can|do|does|tell|me|about)\b/i.test(userMessage);
+    const isSpanish = /[ñáéíóúü¿¡]/i.test(userMessage) || 
+      /\b(qué|quién|cómo|dónde|cuándo|por qué|hola|gracias|proyecto|habilidad|cuéntame|sobre)\b/i.test(userMessage);
+    
+    const languageInstruction = isEnglish && !isSpanish ? 'RESPOND IN ENGLISH.' : 'RESPONDE EN ESPAÑOL.';
+    const relevantInfo = isEnglish && !isSpanish ? getRelevantInfoEN(userMessage) : getRelevantInfo(userMessage);
 
     try {
-      // URL del backend en Vercel (cambiar por tu dominio de Vercel)
-      const apiUrl = process.env.NODE_ENV === 'development' 
-        ? 'http://localhost:3000/api/chat'
-        : 'https://portfolio-backend-e0ucw34i4-jonathan-perezs-projects-a14dddf8.vercel.app/api/chat';
-
-      const response = await fetch(apiUrl, {
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.REACT_APP_GROQ_API_KEY || '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'}`
         },
         body: JSON.stringify({
-          message: userMessage,
-          personalInfo,
-          systemPrompt
+          model: 'llama-3.1-8b-instant',
+          messages: [
+            {
+              role: 'system',
+              content: `${systemPrompt}
+
+${languageInstruction}
+
+DATOS DE JONATHAN:
+${relevantInfo}`
+            },
+            {
+              role: 'user',
+              content: userMessage
+            }
+          ],
+          temperature: 0.3,
+          max_tokens: 150
         })
       });
 
+      if (!response.ok) {
+        const errorData = await response.json();
+        setMessages(prev => [...prev, { 
+          text: `Error API: ${errorData.error?.message || 'Error desconocido'}`,
+          isUser: false 
+        }]);
+        return;
+      }
+
       const data = await response.json();
-      setMessages(prev => [...prev, { text: data.response, isUser: false }]);
+      
+      if (data.choices && data.choices[0] && data.choices[0].message) {
+        setMessages(prev => [...prev, { text: data.choices[0].message.content, isUser: false }]);
+      } else {
+        setMessages(prev => [...prev, { 
+          text: 'Error: Respuesta inesperada de la IA',
+          isUser: false 
+        }]);
+      }
     } catch (error) {
       setMessages(prev => [...prev, { 
         text: translations.aiConnectionError,
