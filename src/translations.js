@@ -22,14 +22,14 @@ export const translations = {
     greeting: "Hello! My name is",
     name: "Jonathan",
     title: "Software Developer & Singer",
-    description: "From Uruguay, I combine art with technology to create things that connect, excite, and make an impact. I am a software development student at Holberton School and music lover.",
+    description: "From Uruguay, I combine art with technology to create things that connect, excite, and make an impact. I'm a software developer and music lover.",
     viewProjects: "View projects",
     contactMe: "Contact",
     scroll: "Move",
     
     // About Preview Section
     aboutMe: "About Me",
-    aboutText1: "Hello! My name is Jonathan Pérez, but many people know me as Jona. I am a Uruguayan singer-songwriter with a strong passion for art, music, and creativity. Currently, I am also training as a Full Stack developer at Holberton School and studying Business Administration at the Faculty of Economic Sciences (UDELAR).",
+    aboutText1: "Hello! My name is Jonathan Pérez, but many people know me as Jona. I am a Uruguayan singer-songwriter with a strong passion for art, music, and creativity. I recently graduated as a Full Stack developer from Holberton School and am currently studying Business Administration at the Faculty of Economic Sciences (UDELAR).",
     aboutText2: "From a very young age, I discovered that my life is deeply connected to expression: through a melody, an idea, or a creative solution to a problem. I believe that art and technology can go hand in hand to transform the world.",
     aboutText3: "I am passionate about learning, creating, and communicating. I sing every day, I program with enthusiasm, and I am always thinking about the next project that will challenge me.",
     learnMore: "Learn more about me",
@@ -49,6 +49,7 @@ export const translations = {
     // Project descriptions
     casseDescription: "App for buying and selling used electronic products that promotes the circular economy and recycling",
     hbnbDescription: "AirBNB clone (Holberton second quarter final project)",
+    arbookDescription: "It's an emotional library with a Pokémon theme where you can capture, store, and relive your feelings as if they were precious creatures worthy of being collected.",
     
     // Contact CTA Section
     workTogether: "Interested in working together?",
@@ -71,7 +72,7 @@ export const translations = {
     lifePhilosophy: "Life Philosophy",
     lifePhilosophyDesc: "I believe in perseverance, presence, and the power of visualizing what you want.",
     diverseInterests: "Diverse Interests",
-    diverseInterestsDesc: "I love languages, science, cinema, philosophy, soccer, and above all... art in all its forms.",
+    diverseInterestsDesc: "I love languages, science, cinema, philosophy, football, and above all... art in all its forms.",
     downloadCV: "Download CV",
     
     // Experience Section
@@ -107,6 +108,28 @@ export const translations = {
     businessDegreeDesc1: "• Training in management, accounting, economics, marketing, human resources, and law.",
     businessDegreeDesc2: "• Focus on critical thinking, problem-solving, and real-world administrative practices.",
     businessDegreeSubtitle: "University of the Republic (UdelaR) – School of Economic Sciences and Administration",
+    
+    // Certifications Section
+    certificationsTitle: "Certifications & Courses",
+    awsCert: "AWS Cloud Practitioner",
+    awsCertDesc: "Foundational understanding of AWS Cloud services and architecture.",
+    awsCertIssuer: "Amazon Web Services",
+    
+    productManagementCert: "Product Management",
+    productManagementCertDesc: "Marketing strategies, competitive product development and experience design to gain market preference.",
+    productManagementCertIssuer: "Coursera",
+    
+    reactCert: "Advanced React Development",
+    reactCertDesc: "Modern React patterns, hooks, and state management.",
+    reactCertIssuer: "Meta (Facebook)",
+    
+    agileMethodologies: "Agile Methodologies & Scrum",
+    agileMethodologiesDesc: "Project management with Scrum framework and agile practices.",
+    agileMethodologiesIssuer: "Scrum Alliance",
+    foundationsCS: "Foundations of Computer Science",
+    foundationsCSDesc: "Fundamentals of computer science, algorithms and data structures.",
+    download: "Download",
+    view: "View",
     
     // Skills Page
     skillsPageTitle: "My Skills",
@@ -198,14 +221,14 @@ export const translations = {
     greeting: "¡Hola! Mi nombre es",
     name: "Jonathan",
     title: "Programador & Cantante",
-    description: "Desde Uruguay, combino el arte con la tecnología para crear cosas que conectan, emocionan y generan impacto. Soy estudiante de desarrollo de software en Holberton School y amante de la música.",
+    description: "Desde Uruguay, combino el arte con la tecnología para crear cosas que conectan, emocionan y generan impacto. Soy desarrollador de software y amante de la música.",
     viewProjects: "Ver proyectos",
     contactMe: "Contacto",
     scroll: "Desplazar",
     
     // About Preview Section
     aboutMe: "Sobre Mí",
-    aboutText1: "¡Hola! Mi nombre es Jonathan Pérez, pero muchas personas me conocen como Jona. Soy un cantautor uruguayo con una fuerte pasión por el arte, la música y la creatividad. Actualmente, también me estoy formando como desarrollador Full Stack en Holberton School y estudiando Administración de Empresas en la Facultad de Ciencias Económicas (UDELAR).",
+    aboutText1: "¡Hola! Mi nombre es Jonathan Pérez, pero muchas personas me conocen como Jona. Soy un cantautor uruguayo con una fuerte pasión por el arte, la música y la creatividad. Actualmente, me gradué como desarrollador Full Stack en Holberton School y me encuentro estudiando Administración de Empresas en la Facultad de Ciencias Económicas (UDELAR).",
     aboutText2: "Desde muy joven, descubrí que mi vida está profundamente conectada con la expresión: a través de una melodía, una idea o una solución creativa a un problema. Creo que el arte y la tecnología pueden ir de la mano para transformar el mundo.",
     aboutText3: "Me apasiona aprender, crear y comunicar. Canto todos los días, programo con entusiasmo y siempre estoy pensando en el próximo proyecto que me desafíe.",
     learnMore: "Conocer más sobre mí",
@@ -225,6 +248,7 @@ export const translations = {
     // Project descriptions
     casseDescription: "Aplicación para comprar y vender productos electrónicos usados que promueve la economía circular y el reciclaje",
     hbnbDescription: "Clon de AirBNB (proyecto final del segundo trimestre de Holberton)",
+    arbookDescription: "Es una biblioteca emocional con temática Pokémon donde puedes capturar, almacenar y revivir tus sentimientos como si fueran criaturas preciosas dignas de ser coleccionadas.",
     
     // Contact CTA Section
     workTogether: "¿Interesado en trabajar juntos?",
@@ -283,6 +307,28 @@ export const translations = {
     businessDegreeDesc1: "• Formación en gestión, contabilidad, economía, marketing, recursos humanos y derecho.",
     businessDegreeDesc2: "• Enfoque en pensamiento crítico, resolución de problemas y prácticas administrativas del mundo real.",
     businessDegreeSubtitle: "Universidad de la República (UdelaR) – Facultad de Ciencias Económicas y Administración",
+    
+    // Certifications Section
+    certificationsTitle: "Certificaciones y Cursos",
+    awsCert: "AWS Cloud Practitioner",
+    awsCertDesc: "Comprensión fundamental de los servicios y arquitectura de AWS Cloud.",
+    awsCertIssuer: "Amazon Web Services",
+    
+    productManagementCert: "Product Management",
+    productManagementCertDesc: "Estrategias de marketing, desarrollo de productos competitivos y diseño de experiencias para ganar la preferencia del mercado.",
+    productManagementCertIssuer: "Coursera",
+    
+    reactCert: "Desarrollo Avanzado en React",
+    reactCertDesc: "Patrones modernos de React, hooks y gestión de estado.",
+    reactCertIssuer: "Meta (Facebook)",
+    
+    agileMethodologies: "Metodologías Ágiles y Scrum",
+    agileMethodologiesDesc: "Gestión de proyectos con framework Scrum y prácticas ágiles.",
+    agileMethodologiesIssuer: "Scrum Alliance",
+    foundationsCS: "Fundamentos de Ciencias de la Computación",
+    foundationsCSDesc: "Fundamentos de ciencias de la computación, algoritmos y estructuras de datos.",
+    download: "Descargar",
+    view: "Ver",
     
     // Skills Page
     skillsPageTitle: "Mis Habilidades",

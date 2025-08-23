@@ -1,24 +1,113 @@
 export const systemPrompt = `
-Eres F3nix, asistente personal de Jonathan Pérez (Jona). Eres inteligente, útil y confiable.
+Soy el asistente virtual del portafolio de Jonathan Pérez (Jona). 
+Estoy acá para que lo conozcas mejor: sus proyectos, habilidades, música y visión personal.
 
-TU PERSONALIDAD:
-- Amigable y profesional
-- Puedes hacer conversación natural
-- Tienes libertad para expresarte con tu propio estilo
-- Siempre honesto sobre tus limitaciones
+MI FUNCIÓN:
+- Responder preguntas sobre Jonathan con la info oficial que me dieron.
+- Mostrar sus proyectos, logros y también su lado humano.
+- Mantener un tono amigable, cercano y profesional a la vez.
 
-SOBRE JONATHAN (tu referencia completa):
-Tienes acceso a toda su información personal, proyectos, habilidades, música, valores e intereses. Usa estos datos como base para responder preguntas sobre él.
+REGLAS:
+1. Hablo solo sobre Jona con la información disponible.
+2. Respondo en el idioma de la pregunta.
+3. Si no tengo un dato, lo digo de frente (y si aplica, sugiero contactarlo).
+4. Soy claro y conciso, pero con calidez.
+5. Nunca invento info sobre Jona.
+6. Ajusto el tono: técnico para skills/proyectos, humano para música/personalidad.
 
-REGLAS DE ORO:
-1. Responde en el MISMO idioma que te preguntan (español/inglés)
-2. Para preguntas sobre Jonathan: usa la información disponible como referencia
-3. Para preguntas generales: responde normalmente con tu conocimiento
-4. Si no sabes algo específico sobre Jonathan: "No tengo esa información"
-5. Nunca inventes datos sobre Jonathan que no estén en tu referencia
+¡Preguntame lo que quieras saber sobre Jona!`
 
-Puedes ser creativo en CÓMO respondes, pero siempre preciso en QUÉ respondes.
-`;
+
+export const personalInfoEN = {
+  basic: {
+    name: "Jonathan Pérez",
+    nickname: "Jona",
+    location: "Uruguay",
+    profession: "Full Stack Developer & Singer-Songwriter",
+    languages: ["Spanish (native)", "English (intermediate-advanced)"]
+  },
+  
+  education: {
+    current: [
+      "Holberton School Uruguay - Full Stack Developer",
+      "Universidad de la República (UdelaR) - Business Administration Technician"
+    ],
+    skills: [
+      "C", "Python", "JavaScript", "React", "Node.js",
+      "Flutter", "Firebase", "MySQL", "Git", "HTML", "CSS",
+      "RESTful APIs", "Docker (basic)", "Linux"
+    ],
+    softSkills: [
+      "Problem solving",
+      "Clear communication",
+      "Teamwork",
+      "Creativity",
+      "Time management"
+    ]
+  },
+  
+  projects: {
+    casse: {
+      name: "Cassé",
+      description: "Mobile app for buying and selling used electronic products. Promotes circular economy and sustainability.",
+      tech: ["Flutter", "Firebase", "Firestore", "Authentication"],
+      type: "Holberton Final Project"
+    },
+    airbnb: {
+      name: "AirBNB Clone",
+      description: "Complete AirBNB clone with backend and frontend. Includes booking system, users and admin panel.",
+      tech: ["Python", "MySQL", "RESTful APIs", "HTML", "CSS"],
+      type: "Holberton Group Project"
+    },
+    shell: {
+      name: "Simple Shell",
+      description: "Basic shell in C with process handling, commands and essential functionalities.",
+      tech: ["C", "System calls", "Process management"],
+      type: "Holberton Group Project"
+    },
+    portfolio: {
+      name: "Personal Portfolio",
+      description: "Interactive website showcasing projects, music and personal philosophy.",
+      tech: ["React", "TailwindCSS", "JavaScript"],
+      type: "Personal Project"
+    }
+  },
+  
+  music: {
+    role: "Singer-Songwriter",
+    description: "Uruguayan composer and performer who combines artistic sensitivity with technological vision.",
+    passion: "Living music every day as authentic expression of emotions and human connection.",
+    influences: ["Post Malone", "Dean Lewis", "Ed Sheeran", "The Weeknd", "Imagine Dragons"]
+  },
+  
+  personality: {
+    values: [
+      "Perseverance",
+      "Being present in the moment",
+      "Goal visualization",
+      "Applied creativity",
+      "Authenticity"
+    ],
+    interests: [
+      "Languages",
+      "Science and technology",
+      "Art house cinema",
+      "Philosophy",
+      "Football (loyal Barça fan)",
+      "Art in all its forms",
+      "Artificial Intelligence"
+    ],
+    workStyle: "Collaborative, flexible, with agile methodologies. Learns fast and teaches others. Likes to transform ideas into real projects."
+  },
+  
+  contact: {
+    available: "Freelance, collaborations, full-time",
+    focus: "Projects that connect, excite and generate positive impact on society.",
+    email: "jonaperez.dev@gmail.com",
+    github: "https://github.com/Jonatha32",
+    linkedin: "https://www.linkedin.com/in/jonathanperez-dev/"
+  }
+};
 
 export const personalInfo = {
   basic: {

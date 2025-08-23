@@ -188,6 +188,39 @@ const TimelineText = styled.p`
   line-height: 1.6;
 `;
 
+const CertificateActions = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+`;
+
+const CertificateButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  svg {
+    margin-right: 6px;
+    font-size: 0.8rem;
+  }
+  
+  background-color: var(--primary-color);
+  color: white;
+  
+  &:hover {
+    background-color: #5952d4;
+    transform: translateY(-2px);
+  }
+  
+
+`;
+
 const AboutStorySection = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -317,7 +350,7 @@ const About = () => {
                       </StoryText>
                     </StoryItem>
                   </AboutStorySection>
-                  <ResumeButton href="#" onClick={(e) => { e.preventDefault(); alert('CV download will be available soon!'); }}>
+                  <ResumeButton href="/portfolio-react/Jonathan Pérez CV.pdf" download="Jonathan_Perez_CV.pdf">
                     <FaDownload /> {translations.downloadCV}
                   </ResumeButton>
                 </AboutText>
@@ -413,6 +446,54 @@ const About = () => {
                   <p>{translations.businessDegreeDesc2}</p>
                   </TimelineText>
                 </TimelineItem>
+              </TimelineContainer>
+            </motion.div>
+          </AboutSection>
+          
+          <AboutSection>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+            >
+              <SectionTitle>{translations.certificationsTitle}</SectionTitle>
+              <TimelineContainer>
+                <TimelineItem>
+                  <TimelineHeader>
+                    <FaGraduationCap className="icon" />
+                    <TimelineTitle>{translations.foundationsCS}</TimelineTitle>
+                    <TimelinePeriod>2025</TimelinePeriod>
+                  </TimelineHeader>
+                  <TimelineSubtitle>Holberton School</TimelineSubtitle>
+                  <TimelineText>{translations.foundationsCSDesc}</TimelineText>
+                  <CertificateActions>
+                    <CertificateButton 
+                      href="/portfolio-react/MVD-1024_Foundations of Computer Science_PýREZ_Jonathan.pdf" 
+                      download="Foundations_Computer_Science_Certificate.pdf"
+                    >
+                      <FaDownload /> {translations.download || 'Descargar'}
+                    </CertificateButton>
+                  </CertificateActions>
+                </TimelineItem>
+                
+                <TimelineItem>
+                  <TimelineHeader>
+                    <FaGraduationCap className="icon" />
+                    <TimelineTitle>{translations.productManagementCert}</TimelineTitle>
+                    <TimelinePeriod>2024</TimelinePeriod>
+                  </TimelineHeader>
+                  <TimelineSubtitle>{translations.productManagementCertIssuer}</TimelineSubtitle>
+                  <TimelineText>{translations.productManagementCertDesc}</TimelineText>
+                  <CertificateActions>
+                    <CertificateButton 
+                      href="/portfolio-react/Coursera SEPTHZ7CQUC5.pdf" 
+                      download="Product_Management_Certificate.pdf"
+                    >
+                      <FaDownload /> {translations.download || 'Descargar'}
+                    </CertificateButton>
+                  </CertificateActions>
+                </TimelineItem>
+                
               </TimelineContainer>
             </motion.div>
           </AboutSection>

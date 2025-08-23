@@ -194,8 +194,8 @@ const ProjectsPreview = () => {
       description: translations.casseDescription,
       image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/cassee.png",
       tags: ['Flutter', 'Dart', 'Firebase'],
-      github: 'https://github.com',
-      demo: 'https://demo.com'
+      github: 'https://github.com/RodrigoNovelli/Cass-',
+      demo: 'https://jonatha32.github.io/Casse_Landing_Page/'
     },
     {
       id: 2,
@@ -203,8 +203,7 @@ const ProjectsPreview = () => {
       description: translations.hbnbDescription,
       image: "https://raw.githubusercontent.com/Jonatha32/portfolio-react/main/public/hbnb.png",
       tags: ['Python', 'MySQL'],
-      github: 'https://github.com/Jonatha32/holbertonschool-hbnb',
-      demo: 'https://demo.com'
+      github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
     },
   ];
 

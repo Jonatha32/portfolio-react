@@ -51,7 +51,7 @@ const Footer = () => {
           <SocialIcon href="https://github.com/Jonatha32" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </SocialIcon>
-          <SocialIcon href="https://www.linkedin.com/in/jonathan-perez-31a5a5165/" target="_blank" rel="noopener noreferrer">
+          <SocialIcon href="https://www.linkedin.com/in/jonathanperez-dev/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </SocialIcon>
           <SocialIcon href="https://x.com/Jonatha88199578" target="_blank" rel="noopener noreferrer">
