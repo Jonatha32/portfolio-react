@@ -205,6 +205,15 @@ const ProjectsPreview = () => {
       tags: ['Python', 'MySQL'],
       github: 'https://github.com/Ifabri31/holbertonschool-hbnb',
     },
+    {
+      id: 5,
+      title: 'Moodia',
+      description: translations.moodiaDescription,
+      image: "https://raw.githubusercontent.com/Jonatha32/Moodia/refs/heads/clean-main/images/logo.png",
+      tags: ['React', 'Firebase', 'Flutter'],
+      category: ['fullstack', 'mobile'],
+      github: 'https://github.com/Jonatha32/Moodia',
+    },
   ];
 
   return (

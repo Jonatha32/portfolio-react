@@ -50,6 +50,8 @@ export const translations = {
     casseDescription: "App for buying and selling used electronic products that promotes the circular economy and recycling",
     hbnbDescription: "AirBNB clone (Holberton second quarter final project)",
     arbookDescription: "It's an emotional library with a Pokémon theme where you can capture, store, and relive your feelings as if they were precious creatures worthy of being collected.",
+    archDescription: "A modern productivity app that helps you organize your life and achieve your goals.",
+    moodiaDescription: "It's an innovative social network that focuses on the personal and emotional process rather than the final result. A space where users authentically share their experiences, emotions and creative, sports, work or personal development processes.",
     
     // Contact CTA Section
     workTogether: "Interested in working together?",
@@ -249,6 +251,8 @@ export const translations = {
     casseDescription: "Aplicación para comprar y vender productos electrónicos usados que promueve la economía circular y el reciclaje",
     hbnbDescription: "Clon de AirBNB (proyecto final del segundo trimestre de Holberton)",
     arbookDescription: "Es una biblioteca emocional con temática Pokémon donde puedes capturar, almacenar y revivir tus sentimientos como si fueran criaturas preciosas dignas de ser coleccionadas.",
+    archDescription: "Una aplicación moderna de productividad que te ayuda a organizar tu vida y alcanzar tus metas.",
+    moodiaDescription: "Es una red social innovadora que pone el foco en el proceso personal y emocional en lugar del resultado final. Un espacio donde los usuarios comparten de forma auténtica sus vivencias, emociones y procesos creativos, deportivos, laborales o de desarrollo personal.",
     
     // Contact CTA Section
     workTogether: "¿Interesado en trabajar juntos?",

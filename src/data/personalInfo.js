@@ -59,6 +59,24 @@ export const personalInfoEN = {
       tech: ["Python", "MySQL", "RESTful APIs", "HTML", "CSS"],
       type: "Holberton Group Project"
     },
+    arbook: {
+      name: "Arbook",
+      description: "It's an emotional library with a Pokémon theme where you can capture, store, and relive your feelings as if they were precious creatures worthy of being collected.",
+      tech: ["Flutter", "Dart", "Firebase", "Firestore"],
+      type: "Personal Project"
+    },
+    arch: {
+      name: "Arch",
+      description: "A modern productivity app that helps you organize your life and achieve your goals. Includes task management, habit tracking and personal planning.",
+      tech: ["React", "Firebase", "JavaScript", "CSS"],
+      type: "Personal Project"
+    },
+    moodia: {
+      name: "Moodia",
+      description: "It's an innovative social network that focuses on the personal and emotional process rather than the final result. A space where users authentically share their experiences, emotions and creative, sports, work or personal development processes.",
+      tech: ["React", "Firebase", "Flutter", "JavaScript"],
+      type: "Personal Project"
+    },
     shell: {
       name: "Simple Shell",
       description: "Basic shell in C with process handling, commands and essential functionalities.",
@@ -149,6 +167,24 @@ export const personalInfo = {
       description: "Clon completo de AirBNB con backend y frontend. Incluye sistema de reservas, usuarios y panel de administración.",
       tech: ["Python", "MySQL", "APIs RESTful", "HTML", "CSS"],
       type: "Proyecto grupal Holberton"
+    },
+    arbook: {
+      name: "Arbook",
+      description: "Biblioteca emocional con temática Pokémon donde puedes capturar, almacenar y revivir tus sentimientos como si fueran criaturas preciosas dignas de ser coleccionadas.",
+      tech: ["Flutter", "Dart", "Firebase", "Firestore"],
+      type: "Proyecto personal"
+    },
+    arch: {
+      name: "Arch",
+      description: "Una aplicación moderna de productividad que te ayuda a organizar tu vida y alcanzar tus metas. Incluye gestión de tareas, seguimiento de hábitos y planificación personal.",
+      tech: ["React", "Firebase", "JavaScript", "CSS"],
+      type: "Proyecto personal"
+    },
+    moodia: {
+      name: "Moodia",
+      description: "Red social innovadora que pone el foco en el proceso personal y emocional en lugar del resultado final. Un espacio donde los usuarios comparten de forma auténtica sus vivencias, emociones y procesos creativos, deportivos, laborales o de desarrollo personal.",
+      tech: ["React", "Firebase", "Flutter", "JavaScript"],
+      type: "Proyecto personal"
     },
     shell: {
       name: "Simple Shell",

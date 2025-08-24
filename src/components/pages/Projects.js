@@ -148,6 +148,15 @@ const ProjectImage = styled.div`
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    
+    &.arch-image {
+      object-fit: contain;
+      background-color: #f8f9fa;
+      
+      .dark-mode & {
+        background-color: #1a1a1a;
+      }
+    }
   }
 `;
 
@@ -187,6 +196,7 @@ const ProjectTag = styled.span`
     background-color: #333;
     color: #fff;
   }
+
 `;
 
 const ProjectLinks = styled.div`
@@ -247,7 +257,7 @@ const Projects = () => {
       description: translations.casseDescription,
       image: "https://github.com/Jonatha32/portfolio-react/blob/main/public/cassee.png?raw=true",
       tags: ['Flutter', 'Dart', 'Firebase'],
-      category: 'mobile',
+      category: ['mobile', 'fullstack'],
       github: 'https://github.com/RodrigoNovelli/Cass-',
       demo: 'https://jonatha32.github.io/Casse_Landing_Page/'
     },
@@ -269,6 +279,25 @@ const Projects = () => {
       category: 'mobile',
       github: 'https://github.com/Jonatha32/Arbook',
     },
+    {
+      id: 4,
+      title: 'Arch',
+      description: translations.archDescription,
+      image: "https://github.com/Jonatha32/Arch/blob/main/public/images/a90f4370-8522-4e30-afb6-84c1dbeba61f.png?raw=true",
+      tags: ['React', 'Firebase'],
+      category: 'fullstack',
+      github: 'https://github.com/Jonatha32/Arch',
+      demo: 'https://jonatha32.github.io/Arch/login'
+    },
+    {
+      id: 5,
+      title: 'Moodia',
+      description: translations.moodiaDescription,
+      image: "https://raw.githubusercontent.com/Jonatha32/Moodia/refs/heads/clean-main/images/logo.png",
+      tags: ['React', 'Firebase', 'Flutter'],
+      category: ['fullstack', 'mobile'],
+      github: 'https://github.com/Jonatha32/Moodia',
+    },
   ];
   
   const handleFilterChange = (newFilter) => {
@@ -281,8 +310,11 @@ const Projects = () => {
   
   const filteredProjects = projects.filter(project => {
     // Filter by category
-    if (filter !== 'all' && project.category !== filter) {
-      return false;
+    if (filter !== 'all') {
+      const categories = Array.isArray(project.category) ? project.category : [project.category];
+      if (!categories.includes(filter)) {
+        return false;
+      }
     }
     
     // Filter by search term
@@ -385,7 +417,11 @@ const Projects = () => {
                 >
                   <ProjectCard>
                     <ProjectImage className="project-image">
-                      <img src={project.image} alt={project.title} />
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className={project.id === 4 ? 'arch-image' : ''}
+                      />
                     </ProjectImage>
                     <ProjectInfo>
                       <ProjectTitle>{project.title}</ProjectTitle>

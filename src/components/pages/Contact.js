@@ -253,14 +253,21 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     
+    console.log('EmailJS Config:', {
+      serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    });
+    
     // Enviar email usando EmailJS
     emailjs.sendForm(
-      'service_wwgmucv', // Reemplaza con tu Service ID de EmailJS
-      'template_hmzgdd5', // Reemplaza con tu Template ID de EmailJS
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       form.current,
-      'xUSG6oi1Qhviy8fcy' // Reemplaza con tu Public Key de EmailJS
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
     )
     .then((result) => {
+      console.log('EmailJS Success:', result);
       setStatus({
         submitted: true,
         success: true,
@@ -276,10 +283,11 @@ const Contact = () => {
       
       setLoading(false);
     }, (error) => {
+      console.error('EmailJS Error:', error);
       setStatus({
         submitted: true,
         success: false,
-        message: translations.messageError
+        message: `Error: ${error.text || error.message || translations.messageError}`
       });
       setLoading(false);
     });
@@ -320,7 +328,7 @@ const Contact = () => {
                   <FaEnvelope className="icon" />
                   <ContactInfoContent>
                     <h4>{translations.email}</h4>
-                    <p>jonaperez038@gmail.com</p>
+                    <p>jonaperez.dev@gmail.com</p>
                   </ContactInfoContent>
                 </ContactInfoItem>
                 
