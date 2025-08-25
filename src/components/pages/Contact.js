@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../../App';
 
 const ContactContainer = styled.div`
-  padding: 120px 0 80px;
+  padding: 180px 0 80px;
 `;
 
 const ContactContent = styled.div`

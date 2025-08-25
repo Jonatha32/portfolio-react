@@ -21,7 +21,7 @@ import {
 import { LanguageContext } from '../../App';
 
 const SkillsContainer = styled.div`
-  padding: 120px 0 80px;
+  padding: 180px 0 80px;
 `;
 
 const SkillsContent = styled.div`

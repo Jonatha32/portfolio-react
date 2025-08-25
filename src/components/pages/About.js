@@ -5,7 +5,7 @@ import { FaDownload, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import { LanguageContext } from '../../App';
 
 const AboutContainer = styled.div`
-  padding: 120px 0 80px;
+  padding: 180px 0 80px;
 `;
 
 const AboutContent = styled.div`

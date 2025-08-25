@@ -9,7 +9,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,11 +20,11 @@ const NavbarContainer = styled.nav`
   transition: all 0.3s ease;
 
   &.scrolled {
-    padding: 0.7rem 2rem;
+    padding: 0.3rem 2rem;
   }
 
   @media (max-width: 768px) {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
   
   .dark-mode & {
@@ -39,14 +39,70 @@ const Logo = styled(Link)`
   color: var(--primary-color);
   display: flex;
   align-items: center;
+  position: relative;
   
   span {
     color: var(--secondary-color);
   }
   
   img {
-    height: 80px;
+    height: 140px;
     width: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3)) brightness(1.1);
+    animation: logoFloat 3s ease-in-out infinite;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: logoGlow 2s ease-in-out infinite alternate;
+    z-index: -1;
+  }
+  
+  &:hover img {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4)) brightness(1.3) saturate(1.2);
+    animation-play-state: paused;
+  }
+  
+  .dark-mode & img {
+    filter: drop-shadow(0 8px 16px rgba(255, 255, 255, 0.2)) brightness(1.2);
+  }
+  
+  .dark-mode &::before {
+    background: radial-gradient(circle, rgba(187, 134, 252, 0.15) 0%, transparent 70%);
+  }
+  
+  .dark-mode &:hover img {
+    filter: drop-shadow(0 12px 24px rgba(255, 255, 255, 0.3)) brightness(1.4) saturate(1.3);
+  }
+  
+  @keyframes logoFloat {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(2deg);
+    }
+  }
+  
+  @keyframes logoGlow {
+    0% {
+      opacity: 0.3;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
   }
 `;
 
@@ -169,14 +225,35 @@ const Navbar = () => {
     <NavbarContainer className={scrolled ? 'scrolled' : ''}>
       <Logo to="/">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ 
+            opacity: 0, 
+            scale: 0.3, 
+            rotate: -180,
+            y: -50
+          }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1, 
+            rotate: 0,
+            y: 0
+          }}
+          transition={{ 
+            duration: 1.2,
+            type: "spring",
+            stiffness: 100,
+            damping: 10
+          }}
+          whileHover={{
+            scale: 1.1,
+            rotate: [0, -5, 5, 0],
+            transition: { duration: 0.6 }
+          }}
+          whileTap={{ scale: 0.95 }}
         >
           <img 
             src={isDarkMode 
-              ? "https://github.com/Jonatha32/portfolio-react/blob/main/public/logo4-Photoroom.png?raw=true" 
-              : "https://github.com/Jonatha32/portfolio-react/blob/main/public/Logoprofesional.png?raw=true"} 
+              ? "https://github.com/Jonatha32/portfolio-react/blob/main/public/logoitech2.png?raw=true" 
+              : "https://github.com/Jonatha32/portfolio-react/blob/main/public/lo.png?raw=true"} 
             alt="Logo" 
           />
         </motion.div>

@@ -5,7 +5,7 @@ import { FaGithub, FaExternalLinkAlt, FaSearch } from 'react-icons/fa';
 import { LanguageContext } from '../../App';
 
 const ProjectsContainer = styled.div`
-  padding: 120px 0 80px;
+  padding: 180px 0 80px;
 `;
 
 const ProjectsContent = styled.div`
