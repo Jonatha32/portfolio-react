@@ -252,8 +252,8 @@ const Navbar = () => {
         >
           <img 
             src={isDarkMode 
-              ? "https://github.com/Jonatha32/portfolio-react/blob/main/public/logoitech2.png?raw=true" 
-              : "https://github.com/Jonatha32/portfolio-react/blob/main/public/lo.png?raw=true"} 
+              ? "https://github.com/Jonatha32/portfolio-react/blob/main/public/logo%20amarillo.png?raw=true" 
+              : "https://github.com/Jonatha32/portfolio-react/blob/main/public/logoo.png?raw=true"} 
             alt="Logo" 
           />
         </motion.div>
