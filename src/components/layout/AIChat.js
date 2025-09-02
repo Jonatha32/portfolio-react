@@ -412,7 +412,7 @@ const AIChat = () => {
       
       if (!apiKey) {
         setMessages(prev => [...prev, { 
-          text: 'Error: API key no configurada. Contacta al desarrollador.',
+          text: 'F3nix está temporalmente desconectado. La API key no está configurada.',
           isUser: false 
         }]);
         setIsLoading(false);
